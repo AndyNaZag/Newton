@@ -5,8 +5,10 @@ import { CardComponent } from '../../components/card/card.component';
   selector: 'nw-landing-page',
   imports: [CardComponent],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent {
-
+  openAssetsModal() {
+    console.log('Open Assets Modal');
+  }
 }
