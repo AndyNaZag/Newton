@@ -5,6 +5,6 @@
       <h3 class="card-title">{{ title() }}</h3>
       <p class="card-text">{{ description() }}</p>
     </div>
-    <button type="button" class="btn btn-outline-success">{{ ctaLabel() }}</button>
+    <button type="button" class="btn btn-outline-success" (click)="onCtaClick.emit()">{{ ctaLabel() }}</button>
   </div>
 </div>

@@ -1,8 +1,11 @@
+@use '../../../styles/_typography' as t;
+@use '../../../styles/_mixins' as m;
+
 .card {
   width: 100%;
   background-color: var(--nw-background-color-primary);
   border: 1px solid var(--nw-border-color-primary);
-  border-radius: 25px;
+  border-radius: var(--nw-border-radius-lg);
 }
 
 .card-body {
@@ -27,29 +30,11 @@
 .card-title {
   color: var(--nw-font-color-primary);
   margin-bottom: 3px;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 41px;
+  @include t.heading;
 }
 
 .card-text {
   color: var(--nw-font-color-primary);
-  font-weight: 600;
-  font-size: 23px;
-  line-height: 32px;
   text-align: center;
-}
-
-.btn-outline-success {
-  font-size: 26px;
-  line-height: 36px;
-  font-weight: bold;
-  border-radius: 46px;
-  border-width: 2px;
-  width: 258px;
-  padding: 18px;
-  --bs-btn-color: var(--nw-font-color-primary-highlight);
-  --bs-btn-border-color: var(--nw-color-primary);
-  --bs-btn-hover-bg: var(--nw-color-primary);
-  --bs-btn-hover-border-color: var(--nw-color-primary);
+  @include t.nw-subheading;
 }
