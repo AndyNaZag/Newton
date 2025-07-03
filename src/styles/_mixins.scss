@@ -1,0 +1,22 @@
+@mixin cta-button {
+  font-size: 26px;
+  line-height: 36px;
+  font-weight: bold;
+  border-radius: 46px;
+  border-width: 2px;
+  padding: 18px 50px;
+}
+
+.btn-outline-success {
+  @include cta-button;
+  --bs-btn-color: var(--nw-font-color-primary-highlight);
+  --bs-btn-border-color: var(--nw-color-primary);
+  --bs-btn-hover-bg: var(--nw-color-primary);
+  --bs-btn-hover-border-color: var(--nw-color-primary);
+}
+
+@mixin circular-button {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+}

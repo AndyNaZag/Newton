@@ -4,6 +4,7 @@
 // @import 'bootstrap/scss/bootstrap'; // Importing bootstrap using the prebuilt css file in angular.json
 
 @use 'styles/variables' as *; // Importing variables from _variables.scss
+@use 'styles/_typography' as t; // Importing typography styles
 
 // Global font family
 body,
