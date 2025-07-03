@@ -1,0 +1,20 @@
+@use '../../../styles/_mixins' as m;
+
+.modal-header-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-icon {
+  color: var(--nw-color-primary);
+}
+
+.modal-footer {
+  justify-content: space-between;
+}
+
+.btn {
+  @include m.cta-button;
+}
