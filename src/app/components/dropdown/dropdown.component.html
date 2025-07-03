@@ -1,0 +1,21 @@
+<div class="dropdown" ngbDropdown>
+  <button
+    class="btn dropdown__button"
+    ngbDropdownToggle
+    [class.placeholder--active]="!selectedOption()"
+    [class.error]="error()"
+  >
+    {{ selectedOption() || '— Select —' }}
+  </button>
+
+  <div ngbDropdownMenu class="dropdown__menu">
+    <button
+      ngbDropdownItem
+      *ngFor="let option of options()"
+      (click)="selectOption(option)"
+      [class.active]="option === selectedOption()"
+    >
+      {{ option }}
+    </button>
+  </div>
+</div>
