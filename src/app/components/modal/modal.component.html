@@ -1,0 +1,14 @@
+<div class="modal-header" autofocus="true">
+  <div class="modal-header-wrapper">
+    <fa-icon class="modal-icon" [icon]="icon" size="3x"></fa-icon>
+    <h4 class="modal-title nw-heading" id="modal-basic-title">{{ title }}</h4>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <ng-container *ngComponentOutlet="contentComponent"></ng-container>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="closeButtonClick()">Close</button>
+  <button type="button" class="btn btn-outline-success" (click)="ctaButtonClick()">Save</button>
+</div>

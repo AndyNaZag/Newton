@@ -1,0 +1,42 @@
+@mixin heading {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+  margin: 0;
+}
+
+.nw-heading {
+  @include heading;
+}
+
+@mixin heading-light {
+  @include heading;
+  font-weight: 500;
+}
+
+@mixin nw-subheading-2 {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 36px;
+}
+
+.nw-subheading-2 {
+  @include nw-subheading-2;
+}
+
+@mixin nw-subheading {
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.nw-subheading {
+  @include nw-subheading;
+}
+
+@mixin normal-text {
+  font-weight: normal;
+  font-size: 23px;
+  line-height: 32px;
+}

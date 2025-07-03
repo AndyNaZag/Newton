@@ -1,0 +1,17 @@
+@if (assetsStore.assets().length) {
+  <nw-assets-list
+    class="content"
+    [assets]="assetsStore.assets()"
+    [totalValue]="assetsStore.totalValue()"
+    (removeAsset)="removeAsset($event)"
+    (onAddAsset)="openAssetsModal()"
+  ></nw-assets-list>
+} @else {
+  <nw-card
+    class="content"
+    title="No Assets"
+    description="You currently don’t have any Assets…"
+    ctaLabel="Add Assets"
+    (onCtaClick)="openAssetsModal()"
+  ></nw-card>
+}

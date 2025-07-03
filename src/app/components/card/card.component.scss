@@ -1,0 +1,40 @@
+@use '../../../styles/_typography' as t;
+@use '../../../styles/_mixins' as m;
+
+.card {
+  width: 100%;
+  background-color: var(--nw-background-color-primary);
+  border: 1px solid var(--nw-border-color-primary);
+  border-radius: var(--nw-border-radius-lg);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+  gap: 50px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-icon {
+  color: var(--nw-color-primary);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: var(--nw-font-color-primary);
+  margin-bottom: 3px;
+  @include t.heading;
+}
+
+.card-text {
+  color: var(--nw-font-color-primary);
+  text-align: center;
+  @include t.nw-subheading;
+}

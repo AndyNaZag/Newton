@@ -1,0 +1,15 @@
+:host {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--nw-background-color-secondary);
+  padding: 50px 25px;
+}
+
+.content {
+  width: 100%;
+  max-width: 850px;
+}

@@ -1,0 +1,45 @@
+@use '../../../styles/_typography' as t;
+
+.dropdown {
+  width: 100%;
+
+  &__button {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--nw-border-radius-sm);
+    border: 1px solid var(--nw-border-color-primary);
+    @include t.normal-text;
+
+    &.placeholder--active {
+      color: var(--nw-font-color-secondary);
+    }
+
+    &.error {
+      border-color: var(--nw-color-error);
+      box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.25);
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    border-radius: var(--nw-border-radius-sm);
+    padding: 4px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    button[ngbDropdownItem] {
+      width: 100%;
+      text-align: left;
+      padding: 8px 16px;
+      @include t.normal-text;
+
+      &.active {
+        font-weight: bold;
+        background-color: var(--nw-background-color-highlight);
+        color: var(--nw-font-color-primary-highlight);
+      }
+    }
+  }
+}
