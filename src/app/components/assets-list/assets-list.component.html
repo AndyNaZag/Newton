@@ -1,0 +1,21 @@
+<div class="assets-list-header">
+  <fa-icon class="assets-list-header__icon" [icon]="assetsIcon" size="3x"></fa-icon>
+  <h4 class="nw-heading">Assets</h4>
+</div>
+<ul class="assets-list" [@listAnimation]="assets().length">
+  @for (asset of assets(); track asset.id) {
+    <li class="assets-list__item" [@slideIn] [@slideOut]>
+      <span class="assets-list__item__name">{{ asset.type }}</span>
+      <span class="assets-list__item__value">{{ asset.value | currency: 'USD' : 'symbol' : '1.2-2' }}</span>
+      <button type="button" class="btn btn-danger assets-list__delete-btn" (click)="removeAsset.emit($index)">
+        <fa-icon [icon]="deleteIcon" size="xl"></fa-icon>
+      </button>
+    </li>
+  }
+  <li class="assets-list__item">
+    <span class="assets-list__item__name">TOTAL VALUE</span>
+    <span class="assets-list__item__value">{{ totalValue() | currency: 'USD' : 'symbol' : '1.2-2' }}</span>
+  </li>
+</ul>
+<hr />
+<button type="button" class="btn btn-outline-success" (click)="onAddAsset.emit()">Add Assets</button>

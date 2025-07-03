@@ -1,0 +1,73 @@
+@use '../../../styles/_mixins' as m;
+@use '../../../styles/_typography' as t;
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--nw-background-color-primary);
+  border: 1px solid var(--nw-border-color-primary);
+  border-radius: var(--nw-border-radius-lg);
+  padding-block: 34px;
+}
+
+.assets-list-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-inline: 34px;
+  gap: 20px;
+
+  &__icon {
+    color: var(--nw-color-primary);
+  }
+}
+
+.assets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 26px;
+  padding-inline: 42px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 35% 15%;
+    justify-self: center;
+    align-items: center;
+    padding-block: 14px;
+    padding-inline: 58px;
+
+    &__name {
+      @include t.heading-light;
+    }
+
+    &__value {
+      @include t.heading;
+    }
+  }
+
+  &__item:last-child {
+    border-top: 3px solid #707070;
+    padding-block: 40px;
+  }
+
+  &__delete-btn {
+    @include m.circular-button;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+hr {
+  margin: 0;
+}
+
+.btn-outline-success {
+  align-self: flex-end;
+  margin-block: 40px 16px;
+  margin-inline: 42px;
+}
