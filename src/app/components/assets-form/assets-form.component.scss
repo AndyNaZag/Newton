@@ -1,0 +1,89 @@
+@use '../../../styles/_typography' as t;
+@use '../../../styles/_mixins' as m;
+
+.assets-form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid var(--nw-border-color-primary);
+  margin: 24px 14px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 56px;
+    gap: 40px;
+    padding: 14px;
+    margin-inline: 26px;
+  }
+
+  &__header {
+    border-bottom: 1px solid var(--nw-border-color-primary);
+    @include t.nw-subheading;
+  }
+
+  &__currency-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .currency {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 56px;
+      padding-inline: 10px;
+      background-color: var(--nw-background-color-secondary);
+      border-radius: var(--nw-border-radius-sm) 0 0 var(--nw-border-radius-sm);
+      border: 1px solid var(--nw-border-color-secondary);
+      @include t.nw-subheading;
+    }
+
+    input {
+      width: 100%;
+      height: 56px;
+      border-radius: 4px;
+      border: 1px solid var(--nw-border-color-primary);
+      padding-left: 79px; // Adjusted for currency symbol width
+      @include t.normal-text;
+    }
+
+    &.error {
+      .currency {
+        border-color: var(--nw-color-error);
+        // box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.25);
+      }
+
+      input {
+        border-color: var(--nw-color-error);
+        box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.25);
+      }
+    }
+  }
+
+  &__delete-btn {
+    @include m.circular-button;
+
+    &.disabled {
+      color: #aaaaaa;
+      background-color: #f2f2f2;
+      border: 1px solid var(--nw-border-color-primary);
+    }
+  }
+}
+
+.add-asset-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-inline: 26px;
+  margin-block: 21px 45px;
+  .btn {
+    color: var(--nw-font-color-primary-highlight);
+  }
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}

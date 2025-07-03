@@ -1,0 +1,47 @@
+<form [formGroup]="form">
+  <div formArrayName="assets" class="assets-form">
+    <div class="assets-form__header assets-form__row">
+      <h5 class="nw-subheading">Type</h5>
+      <h5 class="nw-subheading">Value</h5>
+    </div>
+
+    <div [@listAnimation]="assets.controls.length">
+      @for (asset of assets.controls; track asset.value.id) {
+        <div class="assets-form__row" [formGroupName]="$index" [@slideIn] [@slideOut]>
+          <nw-dropdown
+            formControlName="type"
+            [options]="assetTypes"
+            [error]="
+              (asset.get('type')?.invalid ?? false) &&
+              ((asset.get('type')?.touched ?? false) || assetsStore.savePressed())
+            "
+          ></nw-dropdown>
+
+          <div
+            class="assets-form__currency-input"
+            [class.error]="asset.get('value')?.invalid && (asset.get('value')?.touched || assetsStore.savePressed())"
+          >
+            <span class="currency">$</span>
+            <input formControlName="value" class="form-control" type="text" nwFormatNumber />
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-danger assets-form__delete-btn"
+            [class.disabled]="isDisabled()"
+            [disabled]="isDisabled()"
+            (click)="removeAsset($index)"
+          >
+            <fa-icon [icon]="deleteIcon" size="xl"></fa-icon>
+          </button>
+        </div>
+      }
+    </div>
+
+    <div class="add-asset-wrapper">
+      <button type="button" class="btn nw-subheading-2" (click)="addAsset()">
+        <fa-icon [icon]="addIcon"></fa-icon> Add Another Asset
+      </button>
+    </div>
+  </div>
+</form>
